@@ -325,8 +325,8 @@ Base.ceil(d::Dual) = ceil(value(d))
 Base.trunc(::Type{R}, d::Dual) where {R<:Real} = trunc(R, value(d))
 Base.trunc(d::Dual) = trunc(value(d))
 
-Base.round(::Type{R}, d::Dual) where {R<:Real} = round(R, value(d))
-Base.round(d::Dual) = round(value(d))
+Base.round(::Type{R}, d::Dual, r::RoundingMode=RoundNearest) where {R<:Real} = round(R, value(d), r)
+Base.round(d::Dual, r::RoundingMode=RoundNearest) = round(value(d), r)
 
 Base.fld(x::Dual, y::Dual) = fld(value(x), value(y))
 
